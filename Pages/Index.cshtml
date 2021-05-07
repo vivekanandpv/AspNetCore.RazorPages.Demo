@@ -33,12 +33,15 @@
         </ul>
 
         @*Code blocks*@
-        @{ 
+        @{
             var price = 1548.56874125;
 
             //Method call
             <p>@price.ToString("C2")</p>
         }
+
+        @*price is available here as well*@
+        <p>@price.ToString("C2")</p>
 
     </div>
 
