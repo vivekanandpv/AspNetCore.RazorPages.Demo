@@ -4,17 +4,10 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model AspNetCore.RazorPages.Demo.Pages.CityInfoModel
 @{
+    Layout = "_Layout";
     var city = RouteData.Values["id"].ToString();
     var year = int.Parse(RouteData.Values["year"].ToString());
 }
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-</head>
-<body>
-    <div class="container p-5">
-        You are now in @city and this is year @year
-    </div>
-</body>
-</html>
+<p>You are now in @city and this is year @year</p> 
+    
