@@ -1,5 +1,9 @@
 ﻿@page
-@*^should be the first line*@
+@using AspNetCore.RazorPages.Demo.Provider;
+@{
+    var provider = new StaticDataProvider();
+    var cities = await provider.GetCitiesAsync();
+}
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,43 +12,15 @@
 </head>
 <body>
     <div class="container p-5">
-        @*This is a comment*@
 
-        <p>Today is: @DateTime.Now</p>  @*ToString() is called implicitly*@
-
-        @*Conditional*@
-
-        @if (true)
-        {
-            <p>This is true block</p> @*Implicit return*@
-        }
-        else
-        {
-            <p>This is else block</p>
-        }
-
-        @*Iteration/looping*@
         <ul>
-            @foreach (var item in new[] { "Mumbai", "Bengaluru", "Chennai" })
+            @foreach (var item in cities)
             {
                 <li>@item</li>
             }
 
         </ul>
-
-        @*Code blocks*@
-        @{
-            var price = 1548.56874125;
-
-            //Method call
-            <p>@price.ToString("C2")</p>
-        }
-
-        @*price is available here as well*@
-        <p>@price.ToString("C2")</p>
-
     </div>
-
 </body>
 </html>
 
