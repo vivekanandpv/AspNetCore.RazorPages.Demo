@@ -19,7 +19,7 @@
             @foreach (var item in cities)
             {
                 <p>
-                    @item: <a href="/CityInfo/@item/@randomGenerator.Next(2000, 2029)">More info</a>
+                    @item: <a asp-page="/CityInfo" asp-route-id="@item" asp-route-year="@randomGenerator.Next(2000, 2029)">More info</a>
                 </p>
                 
             }
