@@ -1,0 +1,19 @@
+﻿@page "{id}"
+@*Matches http://localhost:5000/CityInfo/name*@
+@*Please refer: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-5.0#route-constraint-reference*@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model AspNetCore.RazorPages.Demo.Pages.CityInfoModel
+@{
+    var city = RouteData.Values["id"].ToString();
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="container p-5">
+        You are now in @city
+    </div>
+</body>
+</html>

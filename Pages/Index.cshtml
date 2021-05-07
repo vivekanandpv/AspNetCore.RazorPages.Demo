@@ -1,4 +1,5 @@
 ﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @using AspNetCore.RazorPages.Demo.Provider;
 @{
     var provider = new StaticDataProvider();
@@ -13,13 +14,14 @@
 <body>
     <div class="container p-5">
 
-        <ul>
             @foreach (var item in cities)
             {
-                <li>@item</li>
+                <p>
+                    @item: <a href="/CityInfo/@item">More info</a>
+                </p>
+                
             }
 
-        </ul>
     </div>
 </body>
 </html>
