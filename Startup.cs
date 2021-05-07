@@ -27,6 +27,9 @@ namespace AspNetCore.RazorPages.Demo
                 app.UseDeveloperExceptionPage();
             }
 
+            //  for serving static content
+            app.UseStaticFiles();   //  makes available the wwwroot folder as ~
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
