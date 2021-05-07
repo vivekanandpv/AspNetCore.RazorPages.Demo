@@ -4,6 +4,8 @@
 @{
     var provider = new StaticDataProvider();
     var cities = await provider.GetCitiesAsync();
+    var randomGenerator = new Random(DateTime.Now.Millisecond);
+
 }
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -17,7 +19,7 @@
             @foreach (var item in cities)
             {
                 <p>
-                    @item: <a href="/CityInfo/@item">More info</a>
+                    @item: <a href="/CityInfo/@item/@randomGenerator.Next(2000, 2029)">More info</a>
                 </p>
                 
             }
